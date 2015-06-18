@@ -1,0 +1,222 @@
+﻿@model ProV2.Models.Movie
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row col" style="margin-left: 10px; margin-top: 100px; color:gray">
+
+    <div class="col-md-2">
+        <div class="list-group" style="position:fixed">
+            <h3 style="color:gray">Categories</h3> <br>
+            <a id="anim" href="#animated" class="list-group-item">Animated</a>
+            <a id="acti" href="#action" class="list-group-item">Action</a>
+            <a id="adve" href="#adventure" class="list-group-item">Adventure</a>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <hr />
+        <section id="animated" style="margin-top:100px">
+            <script>
+
+            </script>
+            <h3><strong> Animated Movies</strong></h3>
+            <ul>
+
+                @foreach (var i in ViewBag.Animated)
+                {
+                    <li>
+                        <h3><strong> @i.Title</strong></h3>
+                        
+                        <img src="~/Images/@i.FilePath" style="width:200px;height:250px" />
+                        <br />
+                        <a class="btn btn-default" href="~/Home/BuyTicket/@i.Id">Buy Ticket</a> 
+                        <p>
+                            <h4>Movie Description:</h4>
+                            @i.Description
+                        </p>
+                       
+                    </li>
+                }
+
+                @*<li>
+                            <h3><strong> Toy Story 3</strong></h3>
+                        <img src="~/Images/toy-story-3.jpg" />
+                        <p>
+                            <h4>Directors:</h4> Lee Unkrich
+                            <h4>Writers:</h4> John Lasseter, Andrew Stanton, Lee Unkrich, Michael Arndt
+                            <h4>Cast:</h4> Tom Hanks, Tim Allen, Joan Cusack, Ned Beatty, Don Rickles, Michael Keaton, Wallace Shawn, John Ratzenberger, Estelle Harris <br />
+                            <h4>Movie Description:</h4>
+                            Woody, Buzz and the whole gang are back. As their owner Andy prepares to depart for college, his loyal toys find themselves in daycare where untamed tots with their sticky little fingers do not play nice. So, it's all for one and one for all as they join Barbie's counterpart Ken, a thespian hedgehog named Mr. Pricklepants and a pink, strawberry-scented teddy bear called Lots-o'-Huggin' Bear to plan their great escape
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h3><strong> Rio 2</strong></h3>
+                        <img src="~/Images/rio-2.jpg" />
+
+                        <p>
+                            <h4>Directors:</h4> Carlos Saldanha
+                            <h4>Writers:</h4> Don Rhymer, Carlos Kotkin, Jenny Bicks, Yoni Brenner, Carlos Saldanha
+                            <h4>Cast:</h4> Jake T. Austin, Carlinhos Brown, Kristin Chenoweth, Jemaine Clement, Jim Conroy, Rachel Crow, Bernardo de Paula, Nola Donkin, Jesse Eisenberg
+                            <h4>Movie Description:</h4>
+                            It's a jungle out there for Blu, Jewel and their three kids after they're hurtled Rio de Janeiro to the wilds of the Amazon. As Blu tries to fit in, he goes beak-to-beak with the vengeful Nigel, and meets the most fearsome adversary of all: his father-in-law.
+                        </p>
+
+                    </li>
+                    <li>
+                        <h3><strong> How To Train Your Dragon 2</strong></h3>
+                        <img src="~/Images/how-to-train-your-dragon.jpg" />
+                        <p>
+                            <h4>Directors:</h4> Dean DeBlois
+                            <h4>Writers:</h4> Dean DeBlois, Cressida Cowell
+                            <h4>Cast:</h4>Jay Baruchel, Cate Blanchett, Gerard Butler, Craig Ferguson, America Ferrera, Jonah Hill, Christopher Mintz-Plasse, T.J. Miller, Kristen Wiig
+                            <h4>Movie Description:</h4>
+                            It's been five years since Hiccup and Toothless successfully united dragons and vikings on the island of Berk. While Astrid, Snotlout and the rest of the gang are challenging each other to dragon races (the island's new favorite contact sport), the now inseparable pair journey through the skies, charting unmapped territories and exploring new worlds. When one of their adventures leads to the discovery of a secret ice cave that is home to hundreds of new wild dragons and the mysterious Dragon Rider, the two friends find themselves at the center of a battle to protect the peace. Now, Hiccup and Toothless must unite to stand up for what they believe while recognizing that only together do they have the power to change the future of both men and dragons.
+                        </p>
+
+                    </li>*@
+
+            </ul>
+        </section>
+        <hr />
+
+        <section id="action" style="margin-top:100px">
+          
+
+            <h3><strong> Action Movies</strong></h3>
+            <ul>
+
+                @foreach (var i in ViewBag.Action)
+                {
+                    <li>
+                        <h3><strong> @i.Title</strong></h3>
+                        <img src="~/Images/@i.FilePath" style="width:200px;height:250px" />
+                        <br />
+                        <a class="btn btn-default" href="~/Home/BuyTicket/@i.Id">Buy Ticket</a> 
+                        <p>
+                            <h4>Movie Description:</h4>
+                            @i.Description
+                        </p>
+                    </li>
+                }
+
+
+
+
+                @*<li>
+                        <h3><strong> Jupiter Ascending</strong></h3>
+                        <img src="~/Images/jupiter-ascending.jpg" />
+                        <p>
+                            <h4>Directors:</h4>  Andy Wachowski, Lana Wachowski
+                            <h4>Writers:</h4> Andy Wachowski, Lana Wachowski
+                            <h4>Cast:</h4> Mila Kunis, Channing Tatum, Sean Bean, Eddie Redmayne, Douglas Booth, Tuppence Middleton, Nikki Amuka-Bird, Christina Cole, Nicholas A. Newman, Ramon Tikaram
+                            <h4>Movie Description:</h4>
+                            Jupiter Jones was born under a night sky, with signs predicting that she was destined for great things. Now grown, Jupiter dreams of the stars but wakes up to the cold reality of a job cleaning other people's houses and an endless run of bad breaks. Only when Caine Wise, a genetically engineered ex-military hunter, arrives on Earth to track her down does Jupiter begin to glimpse the fate that has been waiting for her all along - her genetic signature marks her as next in line for an extraordinary inheritance that could alter the balance of the cosmos
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h3><strong>American Sniper</strong></h3>
+                        <img src="~/Images/american-sniper.jpg" />
+
+                        <p>
+                            <h4>Directors:</h4>Clint Eastwood
+                            <h4>Writers:</h4> Jason Hall, Chris Kyle, Scott McEwen, James Defelice
+                            <h4>Cast:</h4>  Bradley Cooper, Kyle Gallner, Cole Konis, Ben Reed, Elise Robertson, Luke Sunshine, Troy Vincent, Brandon Salgado Telis, Keir O'Donnell, Marnette Patterson
+                            <h4>Movie Description:</h4>
+                            Navy SEAL sniper Chris Kyle's pinpoint accuracy saves countless lives on the battlefield and turns him into a legend. Back home to his wife and kids after four tours of duty, however, Chris finds that it is the war he can't leave behind.
+                        </p>
+
+                    </li>
+                    <li>
+                        <h3><strong>Iron Man 3</strong></h3>
+                        <img src="~/Images/ironMan3.jpeg" />
+                        <p>
+                            <h4>Directors:</h4>Shane Black
+                            <h4>Writers:</h4> Drew Pearce, Shane Black, Stan Lee, Don Heck, Larry Lieber, Jack Kirby, Warren Ellis, Adi Granov
+                            <h4>Cast:</h4>Robert Downey Jr., Gwyneth Paltrow, Don Cheadle, Guy Pearce, Rebecca Hall, Jon Favreau, Ben Kingsley, James Badge Dale, Stephanie Szostak
+                            <h4>Movie Description:</h4>
+                            Marvel's "Iron Man 3" pits brash-but-brilliant industrialist Tony Stark/Iron Man against an enemy whose reach knows no bounds. When Stark finds his personal world destroyed at his enemy's hands, he embarks on a harrowing quest to find those responsible. This journey, at every turn, will test his mettle. With his back against the wall, Stark is left to survive by his own devices, relying on his ingenuity and instincts to protect those closest to him. As he fights his way back, Stark discovers the answer to the question that has secretly haunted him: does the man make the suit or does the suit make the man?
+                        </p>
+
+                    </li>*@
+
+            </ul>
+        </section>
+        <hr />
+        <section id="adventure" style="margin-top:100px">
+            <script>
+                //$('#anim').removeClass();
+                //$('#acti').removeClass();
+                //$('#adve').removeClass();
+                //$('#acti').addClass("list-group-item ");
+                //$('#adve').addClass("list-group-item active ");
+                //$('#anim').addClass("list-group-item");
+            </script>
+            <h3><strong> Adventure Movies</strong></h3>
+            <ul>
+                @foreach (var i in ViewBag.Adventure)
+                {
+                    <li>
+                        <h3><strong> @i.Title</strong></h3>
+                        <img src="~/Images/@i.FilePath" style="width:200px;height:250px" />
+                        <br/>
+                        <a class="btn btn-default" href="~/Home/BuyTicket/@i.Id">Buy Ticket</a> 
+                        <p>
+                            <h4>Movie Description:</h4>
+                            @i.Description
+                        </p>
+                    </li>
+                }
+
+                @*<li>
+                        <h3><strong> Zathura: A Space Adventure</strong></h3>
+                        <img src="~/Images/zathura-a-space-adventure-2005-movie-poster.jpg" />
+                        <p>
+                            <h4>Directors:</h4> Jon Favreau
+                            <h4>Writers:</h4> Chris Van Allsburg, David Koepp, John Kamps
+                            <h4>Cast:</h4>  Jonah Bobo, Josh Hutcherson, Dax Shepard, Kristen Stewart, Tim Robbins, Frank Oz, John Alexander, Derek Mears, Douglas Tait
+                            <h4>Movie Description:</h4>
+                            Danny and Walter are two brothers who barely get along even while driving their parents to distraction as their older sister tries to ignore them. Despite their squabbling, the brothers manage cooperate enough to play an old mechanical board game named Zathura. However, after their first move, they find that the game has apparently flung them, their sister and their entire house into outer space. Furthermore, the brothers surmise the only way to return home is to finish the game. However with almost every move, new dangers arise as the siblings find themselves learning to cooperate in ways they never expected as they realize what they mean to each other.
+                        </p>
+
+                    </li>
+
+                    <li>
+                        <h3><strong>The Hobbit: The Battle of the Five Armies</strong></h3>
+                        <img src="~/Images/the-hobbit-the-battle-of-the-five-armies.jpg" />
+
+                        <p>
+                            <h4>Directors:</h4> Peter Jackson
+                            <h4>Writers:</h4>  Fran Walsh, Philippa Boyens, Peter Jackson, Guillermo del Toro, J.R.R. Tolkien
+                            <h4>Cast:</h4>  Fran Walsh, Philippa Boyens, Peter Jackson, Guillermo del Toro, J.R.R. Tolkien
+                            <h4>Movie Description:</h4>
+                            Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness.
+                        </p>
+
+                    </li>
+                    <li>
+                        <h3><strong> Night at the Museum: Secret of the Tomb</strong></h3>
+                        <img src="~/Images/night-at-the-museum-secret-of-the-tomb.jpg" />
+                        <p>
+                            <h4>Directors:</h4> Shawn Levy
+                            <h4>Writers:</h4> David Guion, Michael Handelman, Mark Friedman, Thomas Lennon, Robert Ben Garant
+                            <h4>Cast:</h4> Ben Stiller, Robin Williams, Owen Wilson, Steve Coogan, Ricky Gervais, Dan Stevens, Rebel Wilson, Skyler Gisondo, Rami Malek, Patrick Gallagher
+                            <h4>Movie Description:</h4>
+                            Larry spans the globe, uniting favorite and new characters while embarking on an epic quest to save the magic before it is gone forever.
+                        </p>
+
+                    </li>*@
+
+            </ul>
+        </section>
+        <hr />
+
+
+    </div>
+
+</div>

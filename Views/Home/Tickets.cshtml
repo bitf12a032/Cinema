@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    $(document).ready(function () {
+        $('#btncheck').on('click', function () {
+            var m = $('#movie').val();
+            $.getJSON('/Home/GetMovieDetails?movie=' + m, function (d) {
+                if (d != null) {
+                    $('#cust').remove("form");
+                    $('#cust').append(
+                        "<form action=\"RegisterTickets\" method=\"post\">" +
+                            "<table style=\"color:gray\">" +
+                                "<tr>" +
+                                    "<td>Customer Name :</td>" +
+                                    "<td><input type=\"text\" name=\"name\" class=\"form-control\" /></td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                    "<td>Customer Address :</td>" +
+                                    "<td><input type=\"text\" name=\"addr\" class=\"form-control\" /></td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                    "<td>Customer Phone No. :</td>" +
+                                    "<td><input type=\"text\" name=\"phone\" class=\"form-control\" /></td>" +
+                                "</tr>" +
+                                "<tr>" +
+                                    "<td></td>" +
+                                    "<td><input type=\"submit\" class=\"btn-send\" value=\"Submit\" name=\"btnsubmit\" /></td>" +
+                                    "<td><input type=\"hidden\" value=" + d.Id + "name=\"movieid\" /></td>" +
+                                "</tr>" +
+                            "</table>" +
+                        "</form>"
+                        );
+                }
+            })
+        });
+    });
+
+</script>
+
+
+<div class="row" style="margin-top:100px">
+
+    @*<div class="col-md-2">
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Reserve Ticket</a>
+                <a href="#" class="list-group-item">Available Tickets</a>
+            </div>
+        </div>*@
+
+    <div class="col-xs-8">
+        <strong style="color:white"><h2>Tickets Registeration</h2></strong>
+        <br />
+        <br />
+        <center>
+            <div>
+                <table style="color:gray">
+
+                    <tr>
+                        <td>Movie Name:</td>
+                        <td><input type="text" id="movie" class="form-control" /></td>
+                        <td><input type="button" class="btn-space" value="Check Availability" id="btncheck" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" class="btn-send" value="Submit" name="btnsubmit" /></td>
+                    </tr>
+                </table>
+
+            </div>
+            <div id="cust">
+
+            </div>
+        </center>
+    </div>
+</div>
